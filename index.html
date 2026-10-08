@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Studio Nova — Profesjonalne usługi</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #222;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: #222;
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #b48a64;
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .menu a:hover {
+            color: #b48a64;
+        }
+
+        .nav-button {
+            background: #222;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .burger {
+            display: none;
+            border: none;
+            background: none;
+            font-size: 27px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 650px;
+            background: #f5f1ed;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 0.8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .small-title,
+        .section-label {
+            color: #b48a64;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 6vw, 76px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #b48a64;
+        }
+
+        .hero-description {
+            max-width: 550px;
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .primary {
+            background: #222;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid #222;
+            color: #222;
+        }
+
+        .hero-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-image {
+            height: 420px;
+            background: linear-gradient(135deg, #ddd, #c9c0b8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 18px;
+        }
+
+        .hero-card-info {
+            padding: 20px;
+        }
+
+        .hero-card-info strong {
+            font-size: 20px;
+        }
+
+        .hero-card-info p {
+            color: #777;
+        }
+
+        /* ABOUT */
+
+        .about {
+            padding: 110px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .about h2,
+        .section-heading h2,
+        .contact h2 {
+            font-size: 44px;
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .about p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            padding: 110px 0;
+            background: #faf8f6;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-heading > p:last-child {
+            color: #777;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            transition: 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-card.featured {
+            border: 2px solid #b48a64;
+        }
+
+        .service-number {
+            color: #b48a64;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .service-card h3 {
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .service-card strong {
+            font-size: 20px;
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            padding: 110px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 250px;
+            background: linear-gradient(135deg, #ddd, #c7c0ba);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            border-radius: 12px;
+        }
+
+        .gallery-item:nth-child(2),
+        .gallery-item:nth-child(5) {
+            height: 320px;
+        }
+
+        /* REVIEWS */
+
+        .reviews {
+            padding: 110px 0;
+            background: #f5f1ed;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .review {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .stars {
+            color: #b48a64;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .review p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* CTA */
+
+        .cta {
+            padding: 90px 20px;
+            background: #222;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 44px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .light {
+            background: white;
+            color: #222;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            padding: 110px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .contact p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .opening {
+            background: #faf8f6;
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .opening h3 {
+            margin-bottom: 25px;
+        }
+
+        .opening div {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .opening span {
+            color: #666;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111;
+            color: #aaa;
+            padding: 25px 0;
+            font-size: 13px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .menu {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: white;
+                display: none;
+                flex-direction: column;
+                padding: 25px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .nav-button {
+                display: none;
+            }
+
+            .burger {
+                display: block;
+            }
+
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero-content,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .services-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-item,
+            .gallery-item:nth-child(2),
+            .gallery-item:nth-child(5) {
+                height: 200px;
+            }
+
+            .about h2,
+            .section-heading h2,
+            .contact h2,
+            .cta h2 {
+                font-size: 35px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="container nav">
+
+            <a href="#" class="logo">
+                STUDIO <span>NOVA</span>
+            </a>
+
+            <nav class="menu" id="menu">
+                <a href="#o-nas">O nas</a>
+                <a href="#uslugi">Usługi</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#opinie">Opinie</a>
+                <a href="#kontakt">Kontakt</a>
+            </nav>
+
+            <a href="#kontakt" class="nav-button">
+                Umów wizytę
+            </a>
+
+            <button class="burger" id="burger">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <p class="small-title">
+                    PROFESJONALNIE • NOWOCZEŚNIE • Z PASJĄ
+                </p>
+
+                <h1>
+                    Zadbamy o Ciebie<br>
+                    <span>tak, jak zasługujesz.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Profesjonalne usługi, indywidualne podejście
+                    i przyjazna atmosfera. Zobacz naszą ofertę
+                    i umów swoją wizytę.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#uslugi" class="button primary">
+                        Zobacz ofertę
+                    </a>
+
+                    <a href="#kontakt" class="button secondary">
+                        Skontaktuj się
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="hero-image">
+                    Twoje zdjęcie
+                </div>
+
+                <div class="hero-card-info">
+                    <strong>Studio Nova</strong>
+                    <p>Łódź • 5.0 ⭐</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="o-nas">
+
+        <div class="container about-grid">
+
+            <div>
+
+                <p class="section-label">
+                    O NAS
+                </p>
+
+                <h2>
+                    Miejsce stworzone
+                    z myślą o Tobie.
+                </h2>
+
+            </div>
+
+            <div>
+
+                <p>
+                    Jesteśmy małym, lokalnym studiem, w którym
+                    najważniejsza jest jakość oraz indywidualne
+                    podejście do każdego klienta.
+                </p>
+
+                <p>
+                    Dbamy o każdy szczegół, korzystamy ze sprawdzonych
+                    produktów i dokładamy wszelkich starań,
+                    aby każda wizyta była przyjemnym doświadczeniem.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services" id="uslugi">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    NASZA OFERTA
+                </p>
+
+                <h2>
+                    Wybierz coś dla siebie
+                </h2>
+
+                <p>
+                    Sprawdź nasze najpopularniejsze usługi.
+                </p>
+
+            </div>
+
+
+            <div class="services-grid">
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Usługa podstawowa
+                    </h3>
+
+                    <p>
+                        Profesjonalna usługa dopasowana
+                        do Twoich potrzeb.
+                    </p>
+
+                    <strong>
+                        od 60 zł
+                    </strong>
+
+                </div>
+
+
+                <div class="service-card featured">
+
+                    <div class="service-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Usługa premium
+                    </h3>
+
+                    <p>
+                        Kompleksowa usługa dla osób,
+                        które oczekują najlepszego efektu.
+                    </p>
+
+                    <strong>
+                        od 100 zł
+                    </strong>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Usługa dodatkowa
+                    </h3>
+
+                    <p>
+                        Dodatkowa opcja, którą możesz
+                        połączyć z wybraną usługą.
+                    </p>
+
+                    <strong>
+                        od 40 zł
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+
+    <section class="gallery" id="galeria">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    GALERIA
+                </p>
+
+                <h2>
+                    Nasze realizacje
+                </h2>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+                <div class="gallery-item">
+                    Zdjęcie 1
+                </div>
+
+                <div class="gallery-item">
+                    Zdjęcie 2
+                </div>
+
+                <div class="gallery-item">
+                    Zdjęcie 3
+                </div>
+
+                <div class="gallery-item">
+                    Zdjęcie 4
+                </div>
+
+                <div class="gallery-item">
+                    Zdjęcie 5
+                </div>
+
+                <div class="gallery-item">
+                    Zdjęcie 6
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REVIEWS -->
+
+    <section class="reviews" id="opinie">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    OPINIE
+                </p>
+
+                <h2>
+                    Co mówią nasi klienci?
+                </h2>
+
+            </div>
+
+
+            <div class="reviews-grid">
+
+                <div class="review">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        „Bardzo miła obsługa i świetna jakość.
+                        Na pewno wrócę!”
+                    </p>
+
+                    <strong>
+                        — Anna
+                    </strong>
+
+                </div>
+
+
+                <div class="review">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        „Profesjonalne podejście i świetna atmosfera.
+                        Polecam każdemu.”
+                    </p>
+
+                    <strong>
+                        — Michał
+                    </strong>
+
+                </div>
+
+
+                <div class="review">
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <p>
+                        „Jestem bardzo zadowolona z efektu.
+                        Wszystko wygląda świetnie.”
+                    </p>
+
+                    <strong>
+                        — Katarzyna
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+                Gotowy na swoją wizytę?
+            </h2>
+
+            <p>
+                Napisz do nas lub zadzwoń — chętnie odpowiemy
+                na wszystkie pytania.
+            </p>
+
+            <a href="#kontakt" class="button light">
+                Umów wizytę
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="kontakt">
+
+        <div class="container contact-grid">
+
+            <div>
+
+                <p class="section-label">
+                    KONTAKT
+                </p>
+
+                <h2>
+                    Odwiedź nas
+                </h2>
+
+                <p>
+                    📍 ul. Piotrkowska 123, Łódź
+                </p>
+
+                <p>
+                    📞 +48 123 456 789
+                </p>
+
+                <p>
+                    ✉️ kontakt@studionova.pl
+                </p>
+
+            </div>
+
+
+            <div class="opening">
+
+                <h3>
+                    Godziny otwarcia
+                </h3>
+
+                <div>
+                    <span>
+                        Poniedziałek – Piątek
+                    </span>
+
+                    <strong>
+                        09:00 – 19:00
+                    </strong>
+                </div>
+
+                <div>
+                    <span>
+                        Sobota
+                    </span>
+
+                    <strong>
+                        10:00 – 15:00
+                    </strong>
+                </div>
+
+                <div>
+                    <span>
+                        Niedziela
+                    </span>
+
+                    <strong>
+                        Zamknięte
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div>
+                © 2026 Studio Nova
+            </div>
+
+            <div>
+                Wszystkie prawa zastrzeżone
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const burger = document.getElementById("burger");
+        const menu = document.getElementById("menu");
+
+        burger.addEventListener("click", function () {
+            menu.classList.toggle("active");
+        });
+
+
+        const menuLinks = document.querySelectorAll(".menu a");
+
+        menuLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+                menu.classList.remove("active");
+            });
+
+        });
+
+
+        const buttons = document.querySelectorAll("a[href^='#']");
+
+        buttons.forEach(function (button) {
+
+            button.addEventListener("click", function (event) {
+
+                const targetId = button.getAttribute("href");
+
+                if (targetId === "#") {
+                    return;
+                }
+
+                const target = document.querySelector(targetId);
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
