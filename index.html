@@ -1,12 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Studio Nova — Profesjonalne usługi</title>
-
-    <style>
+<meta charset="utf-8"/>
+<meta content="Przykładowa, responsywna strona internetowa dla studia urody. Projekt demonstracyjny Pixenro Web." name="description"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Studio Nova — Studio urody | Projekt demonstracyjny Pixenro</title>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -478,494 +477,248 @@
                 gap: 10px;
             }
         }
-    </style>
+    
+
+        /* POLISHED DEMO DETAILS */
+        .hero-image {
+            position: relative;
+            height: 420px;
+            overflow: hidden;
+            flex-direction: column;
+            background: radial-gradient(circle at 75% 15%, #fae6dc 0, transparent 35%),
+                        radial-gradient(circle at 12% 85%, #aa816e 0, transparent 36%),
+                        linear-gradient(135deg, #dbc6b8, #f7ede6 60%, #c2a48f);
+            color: #44342e;
+            isolation: isolate;
+        }
+        .hero-image:before, .hero-image:after {
+            content: '';
+            position: absolute;
+            border: 1px solid rgba(255,255,255,.58);
+            border-radius: 50%;
+            z-index:-1;
+        }
+        .hero-image:before {width: 370px; height:370px; top:-110px;right:-140px;}
+        .hero-image:after {width: 300px;height:300px;bottom:-190px;left:-120px;}
+        .hero-art-mark {
+            display: flex;align-items: center;justify-content: center;
+            height: 110px;width:110px;border: 1px solid rgba(79,51,39,.34);border-radius: 50%;
+            font-family: Georgia,serif;font-size: 43px;letter-spacing:-5px;line-height:1;position:relative;margin-bottom:24px;
+        }
+        .hero-art-mark span {font-family: Georgia,serif;font-size:16px;position:absolute;top:17px;right:15px;letter-spacing:0;color:#8b5f4c}
+        .hero-art-name {font-family: Georgia,serif;letter-spacing:5px;font-size:23px;color:#43352f;}
+        .hero-art-desc {font-size:12px;letter-spacing:1.7px;text-transform:uppercase;margin-top:9px;color:#745e53;}
+        .gallery-item {align-items:stretch;justify-content:space-between;flex-direction:column;text-align:left; padding:25px;position:relative;overflow:hidden;color:#332c29;isolation:isolate;}
+        .gallery-item:before {content:'';position:absolute;z-index:-1;width:220px;height:220px;border-radius:50%;border: 1px solid rgba(255,255,255,.56);right:-80px;top:20px;box-shadow:0 0 0 33px rgba(255,255,255,.1), 0 0 0 70px rgba(255,255,255,.06)}
+        .gallery-item:nth-child(1) {background:linear-gradient(145deg,#e6c8bb,#faf0e6)}
+        .gallery-item:nth-child(2) {background:linear-gradient(145deg,#d2c4bd,#f0e9e1)}
+        .gallery-item:nth-child(3) {background:linear-gradient(145deg,#decfc5,#f8e8d9)}
+        .gallery-item:nth-child(4) {background:linear-gradient(145deg,#baa89e,#e6d9cb)}
+        .gallery-item:nth-child(5) {background:linear-gradient(145deg,#e8d9c7,#f5ece0)}
+        .gallery-item:nth-child(6) {background:linear-gradient(145deg,#ccb7a7,#f4e6d7)}
+        .tile-number {font-size:12px;letter-spacing:2px;font-weight:700;opacity:.6;}
+        .tile-body {display:flex;flex-direction:column;gap:5px;}
+        .tile-body strong {font-size:25px;line-height:1.1;font-family:Georgia,serif;}
+        .tile-body small {font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.76}
+        .review {min-height:205px;}
+        .review h3 {font-size:21px;margin-bottom:13px;}
+        .feature-symbol {display:block;font-size:30px;line-height:1;color:#b48a64;margin-bottom:23px;}
+        .contact-grid>div:first-child p:last-child {font-size:12px;color:#927a67;margin-top:20px;}
+        .service-card {min-height: 282px;display:flex;flex-direction:column;}
+        .service-card strong {margin-top:auto;}
+        a:focus-visible, button:focus-visible {outline:3px solid #b48a64;outline-offset:3px;}
+        @media(max-width:800px) {
+          .hero-image {height:340px;}
+          .gallery-item {min-height:210px;}
+          .gallery-item:nth-child(2), .gallery-item:nth-child(5) {min-height:250px;}
+        }
+        @media(prefers-reduced-motion:reduce) {html {scroll-behavior:auto;} .button,.service-card {transition:none;}}
+</style>
 </head>
-
 <body>
-
-    <!-- HEADER -->
-
-    <header class="header">
-
-        <div class="container nav">
-
-            <a href="#" class="logo">
+<!-- HEADER -->
+<header class="header">
+<div class="container nav">
+<a class="logo" href="#">
                 STUDIO <span>NOVA</span>
-            </a>
-
-            <nav class="menu" id="menu">
-                <a href="#o-nas">O nas</a>
-                <a href="#uslugi">Usługi</a>
-                <a href="#galeria">Galeria</a>
-                <a href="#opinie">Opinie</a>
-                <a href="#kontakt">Kontakt</a>
-            </nav>
-
-            <a href="#kontakt" class="nav-button">
-                Umów wizytę
-            </a>
-
-            <button class="burger" id="burger">
+</a>
+<nav class="menu" id="menu">
+<a href="#o-nas">O projekcie</a>
+<a href="#uslugi">Usługi</a>
+<a href="#galeria">Galeria</a>
+<a href="#opinie">Atuty strony</a>
+<a href="#kontakt">Kontakt</a>
+</nav>
+<a class="nav-button" href="#kontakt">Zobacz kontakt</a>
+<button aria-controls="menu" aria-expanded="false" aria-label="Otwórz menu" class="burger" id="burger" type="button">
                 ☰
             </button>
-
-        </div>
-
-    </header>
-
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div class="container hero-content">
-
-            <div class="hero-text">
-
-                <p class="small-title">
-                    PROFESJONALNIE • NOWOCZEŚNIE • Z PASJĄ
-                </p>
-
-                <h1>
-                    Zadbamy o Ciebie<br>
-                    <span>tak, jak zasługujesz.</span>
-                </h1>
-
-                <p class="hero-description">
-                    Profesjonalne usługi, indywidualne podejście
-                    i przyjazna atmosfera. Zobacz naszą ofertę
-                    i umów swoją wizytę.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#uslugi" class="button primary">
-                        Zobacz ofertę
-                    </a>
-
-                    <a href="#kontakt" class="button secondary">
-                        Skontaktuj się
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="hero-card">
-
-                <div class="hero-image">
-                    Twoje zdjęcie
-                </div>
-
-                <div class="hero-card-info">
-                    <strong>Studio Nova</strong>
-                    <p>Łódź • 5.0 ⭐</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section class="about" id="o-nas">
-
-        <div class="container about-grid">
-
-            <div>
-
-                <p class="section-label">
-                    O NAS
-                </p>
-
-                <h2>
-                    Miejsce stworzone
-                    z myślą o Tobie.
-                </h2>
-
-            </div>
-
-            <div>
-
-                <p>
-                    Jesteśmy małym, lokalnym studiem, w którym
-                    najważniejsza jest jakość oraz indywidualne
-                    podejście do każdego klienta.
-                </p>
-
-                <p>
-                    Dbamy o każdy szczegół, korzystamy ze sprawdzonych
-                    produktów i dokładamy wszelkich starań,
-                    aby każda wizyta była przyjemnym doświadczeniem.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SERVICES -->
-
-    <section class="services" id="uslugi">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <p class="section-label">
-                    NASZA OFERTA
-                </p>
-
-                <h2>
-                    Wybierz coś dla siebie
-                </h2>
-
-                <p>
-                    Sprawdź nasze najpopularniejsze usługi.
-                </p>
-
-            </div>
-
-
-            <div class="services-grid">
-
-                <div class="service-card">
-
-                    <div class="service-number">
+</div>
+</header>
+<!-- HERO -->
+<section class="hero">
+<div class="container hero-content">
+<div class="hero-text">
+<p class="small-title">PROJEKT DEMONSTRACYJNY PIXENRO · BRANŻA BEAUTY</p>
+<h1>Piękno w Twoim stylu.<br/><span>Każdego dnia.</span></h1>
+<p class="hero-description">Subtelna pielęgnacja, stylizacje dopasowane do Ciebie i chwila relaksu. Poznaj przykładową ofertę Studio Nova.</p>
+<div class="hero-buttons">
+<a class="button primary" href="#uslugi">Poznaj usługi</a>
+<a class="button secondary" href="#o-nas">O projekcie</a>
+</div>
+</div>
+<div class="hero-card">
+<div class="hero-image"><div class="hero-art-mark">SN<span>✦</span></div><div class="hero-art-name">STUDIO NOVA</div><div class="hero-art-desc">Piękno tkwi w szczegółach</div></div>
+<div class="hero-card-info">
+<strong>Projekt dla branży beauty</strong>
+<p>Koncepcja strony internetowej · Pixenro Web</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ABOUT -->
+<section class="about" id="o-nas">
+<div class="container about-grid">
+<div>
+<p class="section-label">O PROJEKCIE</p>
+<h2>Elegancja i prostota.<br/>W jednym miejscu.</h2>
+</div>
+<div>
+<p>Studio Nova to fikcyjna marka stworzona na potrzeby prezentacji projektu. Strona pokazuje, jak niewielki salon może zaprezentować usługi w nowoczesnej, przyjaznej formie.</p>
+<p>Czytelny układ, responsywny design i prosta nawigacja pomagają odwiedzającym szybko poznać ofertę i znaleźć potrzebne informacje.</p>
+</div>
+</div>
+</section>
+<!-- SERVICES -->
+<section class="services" id="uslugi">
+<div class="container">
+<div class="section-heading">
+<p class="section-label">PRZYKŁADOWA OFERTA</p>
+<h2>Wybierz coś dla siebie</h2>
+<p>Poniższe usługi i ceny są przykładowe — pokazują układ oferty.</p>
+</div>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-number">
                         01
                     </div>
-
-                    <h3>
-                        Usługa podstawowa
-                    </h3>
-
-                    <p>
-                        Profesjonalna usługa dopasowana
-                        do Twoich potrzeb.
-                    </p>
-
-                    <strong>
-                        od 60 zł
-                    </strong>
-
-                </div>
-
-
-                <div class="service-card featured">
-
-                    <div class="service-number">
+<h3>Manicure hybrydowy</h3>
+<p>Estetyczna stylizacja paznokci z dbałością o każdy detal.</p>
+<strong>od 110 zł</strong>
+</div>
+<div class="service-card featured">
+<div class="service-number">
                         02
                     </div>
-
-                    <h3>
-                        Usługa premium
-                    </h3>
-
-                    <p>
-                        Kompleksowa usługa dla osób,
-                        które oczekują najlepszego efektu.
-                    </p>
-
-                    <strong>
-                        od 100 zł
-                    </strong>
-
-                </div>
-
-
-                <div class="service-card">
-
-                    <div class="service-number">
+<h3>Koloryzacja i pielęgnacja</h3>
+<p>Dobór koloru i pielęgnacji do indywidualnych potrzeb włosów.</p>
+<strong>od 180 zł</strong>
+</div>
+<div class="service-card">
+<div class="service-number">
                         03
                     </div>
-
-                    <h3>
-                        Usługa dodatkowa
-                    </h3>
-
-                    <p>
-                        Dodatkowa opcja, którą możesz
-                        połączyć z wybraną usługą.
-                    </p>
-
-                    <strong>
-                        od 40 zł
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- GALLERY -->
-
-    <section class="gallery" id="galeria">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <p class="section-label">
-                    GALERIA
-                </p>
-
-                <h2>
-                    Nasze realizacje
-                </h2>
-
-            </div>
-
-
-            <div class="gallery-grid">
-
-                <div class="gallery-item">
-                    Zdjęcie 1
-                </div>
-
-                <div class="gallery-item">
-                    Zdjęcie 2
-                </div>
-
-                <div class="gallery-item">
-                    Zdjęcie 3
-                </div>
-
-                <div class="gallery-item">
-                    Zdjęcie 4
-                </div>
-
-                <div class="gallery-item">
-                    Zdjęcie 5
-                </div>
-
-                <div class="gallery-item">
-                    Zdjęcie 6
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- REVIEWS -->
-
-    <section class="reviews" id="opinie">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <p class="section-label">
-                    OPINIE
-                </p>
-
-                <h2>
-                    Co mówią nasi klienci?
-                </h2>
-
-            </div>
-
-
-            <div class="reviews-grid">
-
-                <div class="review">
-
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-
-                    <p>
-                        „Bardzo miła obsługa i świetna jakość.
-                        Na pewno wrócę!”
-                    </p>
-
-                    <strong>
-                        — Anna
-                    </strong>
-
-                </div>
-
-
-                <div class="review">
-
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-
-                    <p>
-                        „Profesjonalne podejście i świetna atmosfera.
-                        Polecam każdemu.”
-                    </p>
-
-                    <strong>
-                        — Michał
-                    </strong>
-
-                </div>
-
-
-                <div class="review">
-
-                    <div class="stars">
-                        ★★★★★
-                    </div>
-
-                    <p>
-                        „Jestem bardzo zadowolona z efektu.
-                        Wszystko wygląda świetnie.”
-                    </p>
-
-                    <strong>
-                        — Katarzyna
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CTA -->
-
-    <section class="cta">
-
-        <div class="container">
-
-            <h2>
-                Gotowy na swoją wizytę?
-            </h2>
-
-            <p>
-                Napisz do nas lub zadzwoń — chętnie odpowiemy
-                na wszystkie pytania.
-            </p>
-
-            <a href="#kontakt" class="button light">
-                Umów wizytę
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section class="contact" id="kontakt">
-
-        <div class="container contact-grid">
-
-            <div>
-
-                <p class="section-label">
-                    KONTAKT
-                </p>
-
-                <h2>
-                    Odwiedź nas
-                </h2>
-
-                <p>
-                    📍 ul. Piotrkowska 123, Łódź
-                </p>
-
-                <p>
-                    📞 +48 123 456 789
-                </p>
-
-                <p>
-                    ✉️ kontakt@studionova.pl
-                </p>
-
-            </div>
-
-
-            <div class="opening">
-
-                <h3>
-                    Godziny otwarcia
-                </h3>
-
-                <div>
-                    <span>
+<h3>Stylizacja brwi</h3>
+<p>Kształt i kolor podkreślające naturalne rysy twarzy.</p>
+<strong>od 70 zł</strong>
+</div>
+</div>
+</div>
+</section>
+<!-- GALLERY -->
+<section class="gallery" id="galeria">
+<div class="container">
+<div class="section-heading">
+<p class="section-label">INSPIRACJE</p>
+<h2>Świat Studio Nova</h2>
+</div>
+<div class="gallery-grid">
+<div class="gallery-item"><span class="tile-number">01</span><span class="tile-body"><strong>Manicure</strong><small>Subtelny detal</small></span></div>
+<div class="gallery-item"><span class="tile-number">02</span><span class="tile-body"><strong>Fryzury</strong><small>Cięcie i kolor</small></span></div>
+<div class="gallery-item"><span class="tile-number">03</span><span class="tile-body"><strong>Brwi</strong><small>Naturalny akcent</small></span></div>
+<div class="gallery-item"><span class="tile-number">04</span><span class="tile-body"><strong>Pielęgnacja</strong><small>Czas dla siebie</small></span></div>
+<div class="gallery-item"><span class="tile-number">05</span><span class="tile-body"><strong>Koloryzacja</strong><small>Twój styl</small></span></div>
+<div class="gallery-item"><span class="tile-number">06</span><span class="tile-body"><strong>Studio Nova</strong><small>Beauty concept</small></span></div>
+</div>
+</div>
+</section>
+<!-- REVIEWS -->
+<section class="reviews" id="opinie">
+<div class="container">
+<div class="section-heading">
+<p class="section-label">DLACZEGO TEN UKŁAD?</p>
+<h2>Z myślą o klientach</h2>
+</div>
+<div class="reviews-grid">
+<div class="review"><span class="feature-symbol">✦</span><h3>Prosta nawigacja</h3><p>Wszystkie istotne informacje dostępne w kilku kliknięciach.</p></div>
+<div class="review"><span class="feature-symbol">✦</span><h3>Wersja mobilna</h3><p>Układ dopasowany do telefonu, tabletu i komputera.</p></div>
+<div class="review"><span class="feature-symbol">✦</span><h3>Spójny wygląd</h3><p>Kolory, typografia i detale dopasowane do estetyki marki.</p></div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="cta">
+<div class="container">
+<h2>Twoja marka zasługuje na dobrą stronę</h2>
+<p>To przykładowy projekt, który można dostosować do charakteru konkretnego salonu.</p>
+<a class="button light" href="#kontakt">Zobacz sekcję kontaktową</a>
+</div>
+</section>
+<!-- CONTACT -->
+<section class="contact" id="kontakt">
+<div class="container contact-grid">
+<div>
+<p class="section-label">KONTAKT · DEMO</p>
+<h2>Wszystko pod ręką</h2>
+<p>Tutaj może znaleźć się adres salonu i wskazówki dojazdu.</p>
+<p>Tutaj klient znajdzie telefon, e-mail lub przycisk rezerwacji.</p>
+<p>Uwaga: Studio Nova to fikcyjna marka, a projekt ma charakter demonstracyjny.</p>
+</div>
+<div class="opening">
+<h3>Przykładowe godziny otwarcia</h3>
+<div>
+<span>
                         Poniedziałek – Piątek
                     </span>
-
-                    <strong>
+<strong>
                         09:00 – 19:00
                     </strong>
-                </div>
-
-                <div>
-                    <span>
+</div>
+<div>
+<span>
                         Sobota
                     </span>
-
-                    <strong>
+<strong>
                         10:00 – 15:00
                     </strong>
-                </div>
-
-                <div>
-                    <span>
+</div>
+<div>
+<span>
                         Niedziela
                     </span>
-
-                    <strong>
+<strong>
                         Zamknięte
                     </strong>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="container footer-content">
-
-            <div>
-                © 2026 Studio Nova
-            </div>
-
-            <div>
-                Wszystkie prawa zastrzeżone
-            </div>
-
-        </div>
-
-    </footer>
-
-
-    <!-- JAVASCRIPT -->
-
-    <script>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="container footer-content">
+<div>© 2026 Studio Nova · Projekt demonstracyjny Pixenro</div>
+<div>Usługi, ceny i godziny są przykładowe</div>
+</div>
+</footer>
+<!-- JAVASCRIPT -->
+<script>
 
         const burger = document.getElementById("burger");
         const menu = document.getElementById("menu");
 
         burger.addEventListener("click", function () {
             menu.classList.toggle("active");
+            burger.setAttribute("aria-expanded", String(menu.classList.contains("active")));
         });
 
 
@@ -975,6 +728,7 @@
 
             link.addEventListener("click", function () {
                 menu.classList.remove("active");
+                burger.setAttribute("aria-expanded", "false");
             });
 
         });
@@ -1009,6 +763,5 @@
         });
 
     </script>
-
 </body>
 </html>
